@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.Type.Book;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -61,7 +63,5 @@ private BookAdapter mAdapter;
             int index = random.nextInt(books.length);
             mBookList.add(books[index]);
         }
-
     }
-
 }

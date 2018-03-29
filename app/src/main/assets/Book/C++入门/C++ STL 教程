@@ -1,0 +1,68 @@
+在前面的章节中，我们已经学习了 C++ 模板的概念。C++ STL（标准模板库）是一套功能强大的 C++ 模板类，提供了通用的模板类和函数，这些模板类和函数可以实现多种流行和常用的算法和数据结构，如向量、链表、队列、栈。\n
+\n
+C++ 标准模板库的核心包括以下三个组件：\n
+\n
+组件	描述\n
+容器（Containers）	容器是用来管理某一类对象的集合。C++ 提供了各种不同类型的容器，比如 deque、list、vector、map 等。\n
+算法（Algorithms）	算法作用于容器。它们提供了执行各种操作的方式，包括对容器内容执行初始化、排序、搜索和转换等操作。\n
+迭代器（iterators）	迭代器用于遍历对象集合的元素。这些集合可能是容器，也可能是容器的子集。\n
+这三个组件都带有丰富的预定义函数，帮助我们通过简单的方式处理复杂的任务。\n
+\n
+下面的程序演示了向量容器（一个 C++ 标准的模板），它与数组十分相似，唯一不同的是，向量在需要扩展大小的时候，会自动处理它自己的存储需求：\n
+\n
+实例\n
+#include <iostream>\n
+#include <vector>\n
+using namespace std;\n
+ \n
+int main()\n
+{\n
+   // 创建一个向量存储 int\n
+   vector<int> vec; \n
+   int i;\n
+ \n
+   // 显示 vec 的原始大小\n
+   cout << "vector size = " << vec.size() << endl;\n
+ \n
+   // 推入 5 个值到向量中\n
+   for(i = 0; i < 5; i++){\n
+      vec.push_back(i);\n
+   }\n
+ \n
+   // 显示 vec 扩展后的大小\n
+   cout << "extended vector size = " << vec.size() << endl;\n
+ \n
+   // 访问向量中的 5 个值\n
+   for(i = 0; i < 5; i++){\n
+      cout << "value of vec [" << i << "] = " << vec[i] << endl;\n
+   }\n
+ \n
+   // 使用迭代器 iterator 访问值\n
+   vector<int>::iterator v = vec.begin();\n
+   while( v != vec.end()) {\n
+      cout << "value of v = " << *v << endl;\n
+      v++;\n
+   }\n
+ \n
+   return 0;\n
+}\n
+当上面的代码被编译和执行时，它会产生下列结果：\n
+\n
+vector size = 0\n
+extended vector size = 5\n
+value of vec [0] = 0\n
+value of vec [1] = 1\n
+value of vec [2] = 2\n
+value of vec [3] = 3\n
+value of vec [4] = 4\n
+value of v = 0\n
+value of v = 1\n
+value of v = 2\n
+value of v = 3\n
+value of v = 4\n
+关于上面实例中所使用的各种函数，有几点要注意：\n
+\n
+push_back( ) 成员函数在向量的末尾插入值，如果有必要会扩展向量的大小。\n
+size( ) 函数显示向量的大小。\n
+begin( ) 函数返回一个指向向量开头的迭代器。\n
+end( ) 函数返回一个指向向量末尾的迭代器。\n

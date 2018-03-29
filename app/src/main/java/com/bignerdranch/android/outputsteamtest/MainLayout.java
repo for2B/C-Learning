@@ -91,7 +91,6 @@ public class MainLayout extends AppCompatActivity{
            });
 
        }
-
    }
 
 

@@ -3,40 +3,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:layout_scrollFlags="scroll|enterAlways|snap"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bignerdranch.android.outputsteamtest.PracticeActivity">
+    android:background="#CDBFA9"
+    tools:context="com.bignerdranch.android.outputsteamtest.BookActivity">
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <android.support.v7.widget.Toolbar
                 android:layout_height="40dp"
                 android:layout_width="match_parent"
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbarbook"
                 android:background="?attr/colorPrimary"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
                 />
         </android.support.design.widget.AppBarLayout>
-
-
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
+            android:id="@+id/book_directory"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             />
-
     </android.support.design.widget.CoordinatorLayout>
-    <TextView
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="到底了"/>
 </LinearLayout>

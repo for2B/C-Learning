@@ -1,4 +1,4 @@
-package com.bignerdranch.android.outputsteamtest;
+package com.Type;
 
 /**
  * Created by Administrator on 2017\11\26 0026.

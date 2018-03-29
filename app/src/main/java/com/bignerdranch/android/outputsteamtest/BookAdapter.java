@@ -1,6 +1,7 @@
 package com.bignerdranch.android.outputsteamtest;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,8 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.Type.Book;
 import com.bumptech.glide.Glide;
-
+import com.test.file.BookDetail;
+import com.test.file.BookDirectory;
 import java.util.List;
 
 /**
@@ -20,8 +23,7 @@ import java.util.List;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
 
-    private Context mContext;
-
+    private Context mContext ;
     private List<Book> mBooks;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
@@ -51,6 +53,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
                 int position = holder.getAdapterPosition();
                 Book book = mBooks.get(position);
                 Toast.makeText(view.getContext(),book.getBookName(),Toast.LENGTH_SHORT).show();
+                Intent GotoBookDirectory = new Intent(mContext, BookDirectory.class);
+                GotoBookDirectory.putExtra("bookname",book.getBookName());
+                mContext.startActivity(GotoBookDirectory);
             }
         });
         return  holder;
