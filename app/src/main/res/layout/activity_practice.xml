@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bignerdranch.android.outputsteamtest.PracticeActivity">
+    tools:context="com.bignerdranch.android.CLearning.PracticeActivity">
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -34,9 +34,5 @@
             />
 
     </android.support.design.widget.CoordinatorLayout>
-    <TextView
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="到底了"/>
+
 </LinearLayout>

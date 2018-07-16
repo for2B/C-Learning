@@ -7,23 +7,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CDBFA9"
-    tools:context="com.bignerdranch.android.outputsteamtest.BookActivity">
+    tools:context="com.bignerdranch.android.CLearning.BookActivity">
+
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <android.support.v7.widget.Toolbar
-                android:layout_height="40dp"
+                android:id="@+id/toolbarbookdrt"
                 android:layout_width="match_parent"
-                android:id="@+id/toolbarbook"
+                android:layout_height="40dp"
                 android:background="?attr/colorPrimary"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
-                />
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                >
+                <TextView
+                    android:id="@+id/book_directory_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="55px"
+                    />
+            </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/book_directory"
             android:layout_width="match_parent"

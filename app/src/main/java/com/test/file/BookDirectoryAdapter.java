@@ -9,9 +9,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.Type.Book;
 import com.Type.Bookdirectory;
-import com.bignerdranch.android.outputsteamtest.R;
+import com.bignerdranch.android.CLearning.R;
 
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class BookDirectoryAdapter extends RecyclerView.Adapter<BookDirectoryAdap
 
     private List<Bookdirectory> BookDirectory;
     private Context mContext ;
-
+    private boolean IsDetail;
     static class ViewHolder extends RecyclerView.ViewHolder{
         TextView DirectoryName;
         LinearLayout BookItem;
@@ -33,15 +32,15 @@ public class BookDirectoryAdapter extends RecyclerView.Adapter<BookDirectoryAdap
             DirectoryName = (TextView) view.findViewById(R.id.book_directory_item);
         }
     }
-    public BookDirectoryAdapter(List<Bookdirectory> bookDirectory){
+    public BookDirectoryAdapter(List<Bookdirectory> bookDirectory,boolean isdetail){
         BookDirectory = bookDirectory;
+        IsDetail = isdetail;
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
         if(mContext == null){
             mContext = parent.getContext();
         }
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.book_directory_tiem,parent,false);
         final ViewHolder holder = new ViewHolder(view);
         holder.BookItem.setOnClickListener(new View.OnClickListener() {
@@ -49,10 +48,23 @@ public class BookDirectoryAdapter extends RecyclerView.Adapter<BookDirectoryAdap
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
                 Bookdirectory Bd = BookDirectory.get(position);
-                Intent GotoBookDetail = new Intent(mContext,BookDetail.class);
-                GotoBookDetail.putExtra("bookname",Bd.getBookName());
-                GotoBookDetail.putExtra("directoryname",Bd.getDirectoryName());
-                mContext.startActivity(GotoBookDetail);
+                if(Bd.getBookName().split("\\.")[1].equals("PDF")||Bd.getBookName().split("\\.")[1].equals("pdf")){
+                    if(!IsDetail){
+                        Intent GotoBookDetail = new Intent(mContext,PdfBook.class);
+                        GotoBookDetail.putExtra("bookname",Bd.getBookName());
+                        GotoBookDetail.putExtra("page",Bd.getPage());
+                        GotoBookDetail.putExtra("correct",Bd.getCorrect());
+                        mContext.startActivity(GotoBookDetail);
+                        return;
+                    }
+                    PdfBook.dispalypdfview("Book/"+Bd.getBookName().split("\\.")[0]+"/"+Bd.getBookName(),Integer.parseInt(Bd.getPage()),Bd.getCorrect());
+                }else{
+                    Intent GotoBookDetail = new Intent(mContext,BookDetail.class);
+                    GotoBookDetail.putExtra("bookname",Bd.getBookName());
+                    GotoBookDetail.putExtra("directoryname",Bd.getDirectoryName());
+                    mContext.startActivity(GotoBookDetail);
+                }
+
             }
         });
 
@@ -67,6 +79,4 @@ public class BookDirectoryAdapter extends RecyclerView.Adapter<BookDirectoryAdap
     public int getItemCount(){
         return BookDirectory.size();
     }
-
-
 }

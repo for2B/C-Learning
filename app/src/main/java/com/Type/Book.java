@@ -5,16 +5,21 @@ package com.Type;
  */
 
 public class Book {
-
     private String BookName;
     private int ImgId;
-    private  String Directory[];
+    private int Correct;
+    public int getCorrect() {
+        return Correct;
+    }
 
+    public void setCorrect(int correct) {
+        this.Correct = correct;
+    }
 
-    public Book(String BN,int ID){
-        this.BookName = BN;
+    public Book(String BN, int ID,int correct){
+        BookName = BN;
         ImgId = ID;
-
+        Correct = correct;
     }
     public String getBookName() {
         return BookName;
@@ -22,11 +27,6 @@ public class Book {
     public int getImgId() {
         return ImgId;
     }
-    public void setDirectory(String directory[]){
-        this.Directory = directory;
-    }
-    public String[] getDirectory(){
-        return this.Directory;
-    }
+
 
 }

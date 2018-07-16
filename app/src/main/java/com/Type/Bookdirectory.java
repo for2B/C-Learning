@@ -7,10 +7,29 @@ package com.Type;
 public class Bookdirectory {
     private String BookName;
     private String DirectoryName;
+    private String Page;
+    private int Correct;
+    public int getCorrect() {
+        return Correct;
+    }
 
-    public Bookdirectory(String bookName, String directoryName) {
+    public void setCorrect(int correct) {
+        this.Correct = correct;
+    }
+
+    public String getPage() {
+        return Page;
+    }
+
+    public void setPage(String page) {
+        Page = page;
+    }
+
+    public Bookdirectory(String bookName, String directoryName,String page,int correct) {
         BookName = bookName;
         DirectoryName = directoryName;
+        Page = page;
+        Correct = correct;
     }
 
     public String getBookName() {

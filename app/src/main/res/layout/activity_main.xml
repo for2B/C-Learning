@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bignerdranch.android.outputsteamtest.MainActivity"
+    tools:context="com.bignerdranch.android.CLearning.MainActivity"
     android:weightSum="1"
     android:background="@drawable/loginbg3">
 

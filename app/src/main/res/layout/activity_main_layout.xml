@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    tools:context="com.bignerdranch.android.outputsteamtest.MainLayout">
+    tools:context="com.bignerdranch.android.CLearning.MainLayout">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="360dp" />
     </RelativeLayout>
-<android.support.percent.PercentFrameLayout
+    <android.support.percent.PercentFrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="50dp"
